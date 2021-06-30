@@ -32,7 +32,7 @@ seed is integer and path is string
 Request body is JSON
 
 **Here is the example**
-
+ 
 m and n is integer
 
     { 
