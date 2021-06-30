@@ -1,5 +1,5 @@
 const express = require('express')
-import {GenerateHD_SegWit, GenerateMultiSig_P2SH} from "./hd_segwit"
+import {GenerateHD_SegWit, GenerateMultiSig_P2SH} from "./utils"
 const app = express();
 const port = 8080;
 
