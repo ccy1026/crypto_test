@@ -8,7 +8,6 @@ export function GenerateHD_SegWit(seedNumber: number , path : string) {
     const withPathPrivateKey = masterKey.derive(path).extendedPrivateKey;
     const childKey = HDKey.parseExtendedKey(withPathPrivateKey);
     const wallet = childKey.derive("0");
-
     const wifKey = wif.encode(128, wallet.privateKey,true)
     const keyPair = bitcoin.ECPair.fromWIF(wifKey);
     const {address} = bitcoin.payments.p2wpkh({ pubkey: keyPair.publicKey });
