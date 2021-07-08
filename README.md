@@ -8,6 +8,10 @@
 
     npm run start
 
+# **Start the test**
+
+    npm run test
+
 ### The program will listen to 8080 port
 
 API server is http://localhost:8080/

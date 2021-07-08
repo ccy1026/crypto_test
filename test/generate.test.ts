@@ -18,13 +18,14 @@ describe('Generate HD SegWit address', function(){
         let result = valid_input_hd_sig_wit("a", "b")
         expect(result).equal("seed is not a number")
     }),
-    it("Success generate HD SegWit address", function() {
+    it("Success generate HD SegWit address seed = 5 path = m/44'/60'/0'/0/0", function() {
         let result = GenerateHD_SegWit( 5, "m/44'/60'/0'/0/0" )
         let genAddr:string = result || ''
         let data = getAddressInfo(genAddr)
         console.log("HD SegWit address : ", genAddr)
         expect(data.type).equal("p2wpkh")
         })
+    
 })
 
 describe('Generate Multi Sig P2SH address', function(){
@@ -38,12 +39,15 @@ describe('Generate Multi Sig P2SH address', function(){
         expect(result).equal("Pubkey count cannot be less than m")
 
     }),
-    it("Success generate MultiSig_P2SH address", function() {
-        let result = GenerateMultiSig_P2SH(6, 5)
+    it("Success generate MultiSig_P2SH address ", function() {
+        let result = GenerateMultiSig_P2SH(5,6)
         let genAddr:string = result || ''
         let data = getAddressInfo(genAddr)
-        expect(data.type).equal("p2sh")
         console.log("MultiSig_P2SH address : ", genAddr)
+        expect(data.type).equal("p2sh")
+    
         })    
+ 
 })
+
 

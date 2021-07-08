@@ -8,9 +8,10 @@ const port = 8080;
 app.use(express.json())
 
  app.post("/hd_sig_wit", (req:any, res:any) => {
-     const errorMsg = {
+    const errorMsg = {
          "error" : ""
-     }
+    }
+
     let valid_error = valid_input_hd_sig_wit(req.body["seed"], req.body["path"])
     if (valid_error != "") {
         errorMsg["error"] = valid_error
@@ -37,7 +38,7 @@ app.post("/multi_sig_p2sh", (req:any, res:any) => {
         return
     }
 
-    const walletAddress = GenerateMultiSig_P2SH(req.body["n"],req.body["m"])
+    const walletAddress = GenerateMultiSig_P2SH(req.body["m"], req.body["n"])
 
     const responseArray = {
         "address" : walletAddress

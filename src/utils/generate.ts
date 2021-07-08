@@ -15,7 +15,7 @@ export function GenerateHD_SegWit(seedNumber: number , path : string) {
     return address;
 }
 
-export function GenerateMultiSig_P2SH(N:number, M: number) {
+export function GenerateMultiSig_P2SH( M: number, N:number) {
     const pubkeysArray = []
     for(let i = 0; i < N;i++) {
         const keyPair = bitcoin.ECPair.makeRandom();
