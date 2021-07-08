@@ -12,6 +12,12 @@
 
     npm run test
 
+# **Open API Docs**
+
+Open the file with VS Code and run "Preview Swagger"
+
+
+
 ### The program will listen to 8080 port
 
 API server is http://localhost:8080/

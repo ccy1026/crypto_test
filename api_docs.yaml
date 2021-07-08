@@ -1,0 +1,70 @@
+openapi: 3.0.1
+info:
+  title: Bitcoin Address API version 0.1
+  description: Bitcoin Address API version 0.1
+  termsOfService: http://swagger.io/terms/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+tags:
+- name: address
+  description: Generate bitcoin address
+paths:
+  /multi_sig_p2sh:
+    post:
+      tags:
+      - address
+      summary: Create multi-sig P2SH address
+      requestBody:
+        content:
+          application/json:
+            schema:      # Request body contents
+              type: object
+              properties:
+                m:
+                  type: integer
+                n:
+                  type: integer
+              example:   # Sample object
+                m: 5
+                n: 6
+      responses:
+        '200':
+          description: OK
+          content:
+              application/json:
+                 schema:      # Request body contents
+                  type: object
+                  example:   # Sample object
+                    address: string
+
+  /hd_sig_wit:
+      post:
+        tags:
+        - address
+        summary: Create HD SegWit address
+        requestBody:
+          content:
+            application/json:
+              schema:      
+                type: object
+                properties:
+                  seed:
+                    type: integer
+                  path:
+                    type: string
+                example:  
+                  seed: 6
+                  path: "m/44'/60'/0'/0/0"
+        responses:
+          '200':
+            description: OK
+            content:
+                application/json:
+                  schema:      # Request body contents
+                    type: object
+                    example:   # Sample object
+                      address: string
+    
+
