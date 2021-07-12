@@ -10,13 +10,14 @@
 
     npm run test
 
-#API server IP
+# **API server IP**
 
     http://localhost:8080/
 
-# **Open API Docs**
+# **API Docs**
 
-### **Open the file api_docs.yaml with VS Code and run "Preview Swagger"**
+### Open the file api_docs.yaml with VS Code and run "Preview Swagger"
+
 
 
 
