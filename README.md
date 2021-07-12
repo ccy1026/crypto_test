@@ -1,5 +1,3 @@
-# crypto_test
-
 # **Init the test**
 
     npm install
@@ -12,24 +10,22 @@
 
     npm run test
 
+#API server IP
+
+    http://localhost:8080/
+
 # **Open API Docs**
 
 Open the file api_docs.yaml with VS Code and run "Preview Swagger"
 
 
 
-### The program will listen to 8080 port
-
-API server is http://localhost:8080/
-
 ##Hierarchical Deterministic (HD) Segregated Witness (SegWit) bitcoin address API:
 
-###### POST Request to http://localhost:8080/hd_sig_wit
-Request body is JSON
+#### POST Request to 
+    http://localhost:8080/hd_sig_wit
 
-**Here is the example**
-
-seed is integer and path is string
+**The request body is JSON, seed is integer and path is string. Here is the example**
 
     { 
         "seed" : 5, 
@@ -38,12 +34,13 @@ seed is integer and path is string
 
 
 ##Multisignature (multi-sig) Pay-To-Script-Hash (P2SH) bitcoin address API:
-###### POST Request to http://localhost:8080/multi_sig_p2sh
-Request body is JSON
+####POST Request to 
+    http://localhost:8080/multi_sig_p2sh
 
-**Here is the example**
+
+**Request body is JSON, m and n is integer. Here is the example**
  
-m and n is integer
+
 
     { 
         "m" : 5, 

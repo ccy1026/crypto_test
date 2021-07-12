@@ -11,48 +11,69 @@ export function GenerateHD_SegWit(seedNumber: number , path : string) {
     const wallet = childKey.derive("0");
     const wifKey = WifEncode(wallet.privateKey)
     const keyPair = GetPairFromWif(wifKey);
-    const address = GenerateP2WPKHAddress(keyPair.publicKey);
+    const address = GenerateP2WPKHAddress(keyPair);
 
     return address;
 }
 
 
 export function GenerateMultiSig_P2SH( M: number, N:number) {
-    const pubkeysArray = []
+    let pubKeysArray = []
     for(let i = 0; i < N;i++) {
-        const keyPair = GenerateKeyPairbyECPair();
-        pubkeysArray.push(keyPair.publicKey)
+        let keyPair = GenerateKeyPairByECPair();
+        pubKeysArray.push(keyPair.publicKey)
     }
-    const address = GenerateP2SHAddress(M,pubkeysArray)
+    const address = GenerateP2SHAddress(M,pubKeysArray)
 
     return address
 }
 
 
-export function GenerateKeyPairbyECPair() {
-    return bitcoin.ECPair.makeRandom();
+export function GenerateKeyPairByECPair() {
+    return  bitcoin.ECPair.makeRandom();
 }
 
 
 export function GenerateMasterKey(seedNumber : number, path : string) {
-     let masterKey = HDKey.parseMasterSeed(randomBytes(seedNumber))
-     return masterKey.derive(path).extendedPrivateKey;
+    try {
+        let masterKey = HDKey.parseMasterSeed(randomBytes(seedNumber))
+        let childKey =  masterKey.derive(path).extendedPrivateKey;
+        return childKey
+    }catch (err) {
+        return err
+    }
+
+
 }
 
 export function WifEncode(privateKey : any) {
-   return wif.encode(128, privateKey, true)
+    try {
+        let wifKey = wif.encode(128, privateKey, true)
+        return wifKey
+    }catch (err) {
+        let msg = "Fail to encode the wif key. Error :"+ err
+        return msg
+    }
+
 }
 
 export function GetPairFromWif(wifKey : any) {
-    return bitcoin.ECPair.fromWIF(wifKey);
+    try {
+        let keyPair = bitcoin.ECPair.fromWIF(wifKey);
+        return keyPair.publicKey
+    }catch (err) {
+        let msg = "Fail to get the wif key from pair. Error :"+ err
+        return msg
+    }
 }
-export function GenerateP2WPKHAddress(publicKey :Buffer) {
+export function GenerateP2WPKHAddress(publicKey :any) {
     try {
         const {address} = bitcoin.payments.p2wpkh({ pubkey: publicKey });
         return address
     }
     catch (err) {
-        return err
+        let msg = "Fail to generate P2WPKH address. Error : "+ err
+        return msg
     }
      
 }
