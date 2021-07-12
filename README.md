@@ -35,12 +35,12 @@
 
 
 ##Multisignature (multi-sig) Pay-To-Script-Hash (P2SH) bitcoin address API:
+
 ####POST Request to 
     http://localhost:8080/multi_sig_p2sh
 
 
 **Request body is JSON, m and n is integer. Here is the example**
- 
 
 
     { 
