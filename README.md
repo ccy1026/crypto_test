@@ -21,12 +21,12 @@
 ---
 
 
-##Hierarchical Deterministic (HD) Segregated Witness (SegWit) bitcoin address API:
+## Hierarchical Deterministic (HD) Segregated Witness (SegWit) bitcoin address API:
 
 #### POST Request to 
     http://localhost:8080/hd_sig_wit
 
-**The request body is JSON, seed is integer and path is string. Here is the example**
+** The request body is JSON, seed is integer and path is string. Here is the example**
 
     { 
         "seed" : 5, 
@@ -42,7 +42,7 @@
     http://localhost:8080/multi_sig_p2sh
 
 
-**Request body is JSON, m and n is integer. Here is the example**
+** Request body is JSON, m and n is integer. Here is the example**
 
 
     { 
