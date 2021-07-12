@@ -17,8 +17,8 @@
 # **API Docs**
 
 #### Open the file api_docs.yaml with VS Code and run "Preview Swagger"
-<br>
 
+---
 
 
 ##Hierarchical Deterministic (HD) Segregated Witness (SegWit) bitcoin address API:
