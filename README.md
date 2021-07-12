@@ -16,7 +16,7 @@
 
 # **Open API Docs**
 
-Open the file api_docs.yaml with VS Code and run "Preview Swagger"
+### **Open the file api_docs.yaml with VS Code and run "Preview Swagger"**
 
 
 
