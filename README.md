@@ -34,9 +34,11 @@
     }
 
 
-##Multisignature (multi-sig) Pay-To-Script-Hash (P2SH) bitcoin address API:
 
-####POST Request to 
+
+## Multisignature (multi-sig) Pay-To-Script-Hash (P2SH) bitcoin address API:
+
+#### POST Request to 
     http://localhost:8080/multi_sig_p2sh
 
 
